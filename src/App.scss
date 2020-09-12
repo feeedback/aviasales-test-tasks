@@ -1,0 +1,47 @@
+body {
+    background: #f3f7fa;
+}
+.App {
+    .header {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 23px;
+
+        .logo {
+            width: 82px;
+            height: 89px;
+        }
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 20px;
+
+        .aside {
+            height: 300px;
+            width: 232px;
+        }
+        .section-main {
+            height: 700px;
+            width: 502px;
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            align-items: stretch;
+            row-gap: 20px;
+
+            .button-group {
+                display: flex;
+                justify-content: center;
+                button:not(.MuiButton-contained)  {
+                    background-color: white;
+                    height: 50px;
+                    border: 1px solid #dfe5ec;
+                }
+            }
+        }
+    }
+}
