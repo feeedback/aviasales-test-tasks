@@ -25,3 +25,4 @@ https://www.figma.com/file/4fQe1lEbo4DARjvNtaU0uJ/Aviasales-test-task
 Удачи! Если будут какие-то вопросы, пиши – добавим уточнения в репу.
 
 P.S.: Картинки авиакомпаний можешь брать с нашего CDN: `//pics.avs.io/99/36/{IATA_CODE_HERE}.png`
+
