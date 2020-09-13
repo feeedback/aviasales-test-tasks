@@ -4,15 +4,14 @@ import './App.scss';
 
 import {
     Container,
-    // Grid,
-    Paper,
-    Avatar,
-    ButtonGroup,
-    Button,
+    Row,
+    Image,
+    ToggleButtonGroup,
+    ToggleButton,
+    Form,
+    // FormControl,
     Card,
-    CardContent,
-    Typography,
-} from '@material-ui/core';
+} from 'react-bootstrap';
 // import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 const App = () => {
@@ -20,51 +19,194 @@ const App = () => {
         header: 'header',
         logo: 'logo',
         main: 'main',
-        aside: 'aside',
+        asideFilter: 'aside-filter',
         sectionMain: 'section-main',
         buttonGroup: 'button-group',
+        toggleButton: 'toggle-button',
+        card: '',
+        cardHeader: 'card-header-my',
+        cardTitle: 'card-title-my',
+        companyLogo: 'company-logo',
+        routes: 'routes',
+        routesBox: 'routes-box',
+        routesColumn: 'routes-column',
+        routesColumnTitle: 'routes-column-title',
+        routesColumnInfo: 'routes-column-info',
     };
     return (
         <div className="App">
-            <Container component="header" maxWidth="lg" className={classes.header}>
-                <Avatar alt="Logo" src={logo} className={classes.logo} />
+            <Container component="header" className={classes.header}>
+                <Row>
+                    <Image alt="Logo" src={logo} className={classes.logo} />
+                </Row>
             </Container>
-            <Container component="main" maxWidth="lg" className={classes.main}>
-                <Paper component="aside" elevation={2} className={classes.aside} />
-                <div component="div" className={classes.sectionMain}>
-                    <ButtonGroup
-                        // variant="contained"
-                        // color="primary"
-                        aria-label="outlined button group"
+            <Container className={classes.main}>
+                <Card body className={classes.asideFilter}>
+                    <fieldset>
+                        <Form.Group>
+                            <Form.Label as="legend">Количество пересадок</Form.Label>
+                            <Form.Check type="checkbox" label="Все" />
+                            <Form.Check type="checkbox" label="Без пересадок" />
+                            <Form.Check type="checkbox" label="1 пересадка" />
+                            <Form.Check type="checkbox" label="2 пересадки" />
+                            <Form.Check type="checkbox" label="3 пересадки" />
+                        </Form.Group>
+                    </fieldset>
+                </Card>
+                <div component="main" className={classes.sectionMain}>
+                    <ToggleButtonGroup
                         className={classes.buttonGroup}
-                        fullWidth={true}
+                        type="radio"
+                        name="options"
+                        defaultValue={1}
                     >
-                        <Button variant="contained" color="primary">
+                        <ToggleButton
+                            value={1}
+                            variant="outline-primary"
+                            className={classes.toggleButton}
+                        >
                             Самый дешевый
-                        </Button>
-                        <Button>Самый быстрый</Button>
-                    </ButtonGroup>
-                    <Card className={classes.root}>
-                        <CardContent>
-                            <Typography
-                                className={classes.title}
-                                color="textSecondary"
-                                gutterBottom
-                            >
-                                Word of the Day
-                            </Typography>
-                            <Typography variant="h5" component="h2">
-                                sdfdfadfgdfagdafg
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                                adjective
-                            </Typography>
-                            <Typography variant="body2" component="p">
-                                well meaning and kindly.
-                                <br />
-                                {'"a benevolent smile"'}
-                            </Typography>
-                        </CardContent>
+                        </ToggleButton>
+                        <ToggleButton
+                            value={2}
+                            variant="outline-primary"
+                            className={classes.toggleButton}
+                        >
+                            Самый быстрый
+                        </ToggleButton>
+                    </ToggleButtonGroup>
+
+                    <Card className={classes.card}>
+                        <Card.Body>
+                            <div className={classes.cardHeader}>
+                                <p className={classes.cardTitle}>13 400 Р</p>
+                                <Image
+                                    alt="s7"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/c/c2/S7_new_logo.svg"
+                                    className={classes.companyLogo}
+                                />
+                            </div>
+                            <div className={classes.routesBox}>
+                                <div className={classes.routes}>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            MOW – HKT
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            10:45 – 08:00
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            В пути
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            21ч 15м
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            2 пересадки
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            HKG, JNB
+                                        </span>
+                                    </p>
+                                </div>
+                                <div className={classes.routes}>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            MOW – HKT
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            10:45 – 08:00
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            В пути
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            21ч 15м
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            2 пересадки
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            HKG, JNB
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                    <Card className={classes.card}>
+                        <Card.Body>
+                            <div className={classes.cardHeader}>
+                                <p className={classes.cardTitle}>13 400 Р</p>
+                                <Image
+                                    alt="s7"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/c/c2/S7_new_logo.svg"
+                                    className={classes.companyLogo}
+                                />
+                            </div>
+                            <div className={classes.routesBox}>
+                                <div className={classes.routes}>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            MOW – HKT
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            10:45 – 08:00
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            В пути
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            21ч 15м
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            2 пересадки
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            HKG, JNB
+                                        </span>
+                                    </p>
+                                </div>
+                                <div className={classes.routes}>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            MOW – HKT
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            10:45 – 08:00
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            В пути
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            21ч 15м
+                                        </span>
+                                    </p>
+                                    <p className={classes.routesColumn}>
+                                        <span className={classes.routesColumnTitle}>
+                                            2 пересадки
+                                        </span>
+                                        <span className={classes.routesColumnInfo}>
+                                            HKG, JNB
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </Card.Body>
                     </Card>
                 </div>
             </Container>
