@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
+import CheckboxCustom from './component/CheckboxCustom';
 
 import {
     Container,
@@ -19,6 +20,7 @@ const App = () => {
         header: 'header',
         logo: 'logo',
         main: 'main',
+        aside: 'aside',
         asideFilter: 'aside-filter',
         sectionMain: 'section-main',
         buttonGroup: 'button-group',
@@ -41,18 +43,25 @@ const App = () => {
                 </Row>
             </Container>
             <Container className={classes.main}>
-                <Card body className={classes.asideFilter}>
-                    <fieldset>
-                        <Form.Group>
-                            <Form.Label as="legend">Количество пересадок</Form.Label>
-                            <Form.Check type="checkbox" label="Все" />
+                <aside>
+                    <Card body className={classes.asideFilter}>
+                        <fieldset>
+                            <Form.Group>
+                                <Form.Label as="legend">Количество пересадок</Form.Label>
+                                {/* <Form.Check type="checkbox" label="Все" />
                             <Form.Check type="checkbox" label="Без пересадок" />
                             <Form.Check type="checkbox" label="1 пересадка" />
                             <Form.Check type="checkbox" label="2 пересадки" />
-                            <Form.Check type="checkbox" label="3 пересадки" />
-                        </Form.Group>
-                    </fieldset>
-                </Card>
+                            <Form.Check type="checkbox" label="3 пересадки" /> */}
+                                <CheckboxCustom label="Все" checked />
+                                <CheckboxCustom label="Без пересадок" />
+                                <CheckboxCustom label="1 пересадка" />
+                                <CheckboxCustom label="2 пересадки" />
+                                <CheckboxCustom label="3 пересадки" />
+                            </Form.Group>
+                        </fieldset>
+                    </Card>
+                </aside>
                 <div component="main" className={classes.sectionMain}>
                     <ToggleButtonGroup
                         className={classes.buttonGroup}

@@ -27,8 +27,21 @@ body {
         gap: 20px;
 
         .aside-filter {
-            height: 300px;
+            .card-body {
+                padding: 0;
+            }
+            // height: 300px;
             width: 232px;
+            .form-label {
+                font-size: 12px;
+                line-height: 12px;
+
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                color: $dark-color;
+                margin-bottom: 0;
+                padding: 20px 20px 10px 20px;
+            }
         }
         .card {
             border-width: $border-width;
