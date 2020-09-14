@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import CheckboxCustom from './component/CheckboxCustom';
+import FilterForm from './component/FilterForm';
 
 import {
     Container,
@@ -48,16 +49,13 @@ const App = () => {
                         <fieldset>
                             <Form.Group>
                                 <Form.Label as="legend">Количество пересадок</Form.Label>
-                                {/* <Form.Check type="checkbox" label="Все" />
-                            <Form.Check type="checkbox" label="Без пересадок" />
-                            <Form.Check type="checkbox" label="1 пересадка" />
-                            <Form.Check type="checkbox" label="2 пересадки" />
-                            <Form.Check type="checkbox" label="3 пересадки" /> */}
-                                <CheckboxCustom label="Все" checked />
-                                <CheckboxCustom label="Без пересадок" />
-                                <CheckboxCustom label="1 пересадка" />
-                                <CheckboxCustom label="2 пересадки" />
-                                <CheckboxCustom label="3 пересадки" />
+                                <FilterForm>
+                                    <CheckboxCustom label="Все" />
+                                    <CheckboxCustom label="Без пересадок" />
+                                    <CheckboxCustom label="1 пересадка" />
+                                    <CheckboxCustom label="2 пересадки" />
+                                    <CheckboxCustom label="3 пересадки" />
+                                </FilterForm>
                             </Form.Group>
                         </fieldset>
                     </Card>

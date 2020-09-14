@@ -9,8 +9,13 @@ $checkbox-checked-border-color: $primary-color;
     position: relative;
     line-height: 2.25rem;
     padding: 0 20px;
+    // outline: $primary-color auto 1px;
     &:hover {
         background: #f1fcff;
+    }
+
+    &:focus-within {
+        outline: $primary-color auto 1px;
     }
 }
 
