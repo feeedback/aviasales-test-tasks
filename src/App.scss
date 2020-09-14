@@ -49,8 +49,8 @@ body {
             box-shadow: $box-shadow;
         }
         .section-main {
-            height: 700px;
             width: 502px;
+            min-width: 360px;
             display: flex;
             align-content: center;
             flex-direction: column;

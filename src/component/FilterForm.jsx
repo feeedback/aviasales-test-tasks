@@ -21,11 +21,28 @@ class FilterForm extends Component {
     }
     handleChange = (event) => {
         const { id, checked } = event.target;
+        let newState = { ...this.state.filter, [id]: checked };
+        
+        //All variant
+        if (id === '0') {
+            Object.keys(newState)
+                .slice(1)
+                .forEach((k) => (newState[k] = newState[0]));
+        } else {
+            if (
+                Object.values(newState)
+                    .slice(1)
+                    .every(Boolean)
+            ) {
+                newState[0] = true;
+            } else {
+                newState[0] = false;
+            }
+        }
 
-        this.setState(({ filter }) => {
-            return { filter: { ...filter, [id]: checked } };
-        });
+        this.setState({ filter: newState });
     };
+
     render() {
         const { filter } = this.state;
         return (
