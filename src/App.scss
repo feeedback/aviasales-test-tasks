@@ -4,147 +4,146 @@ body {
     background: $bg-color;
     font: $font-primary;
 }
-.App {
-    .header {
-        display: flex;
-        justify-content: center;
-        padding-top: calc(50px - 10px);
-        padding-bottom: calc(50px - 19px);
-        .row {
-            height: calc(60px + 10 + 19px);
-            width: calc(60px + 11px + 11px);
-            .logo {
-                width: 100%;
-                height: 100%;
-            }
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding-top: calc(50px - 10px);
+    padding-bottom: calc(50px - 19px);
+    .row {
+        height: calc(60px + 10 + 19px);
+        width: calc(60px + 11px + 11px);
+        .logo {
+            width: 100%;
+            height: 100%;
         }
     }
+}
 
-    .main {
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+
+    .aside-filter {
+        .card-body {
+            padding: 0;
+        }
+        // height: 300px;
+        width: 232px;
+        .form-label {
+            font-size: 12px;
+            line-height: 12px;
+
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: $dark-color;
+            margin-bottom: 0;
+            padding: 20px 20px 10px 20px;
+        }
+    }
+    .card {
+        border-width: $border-width;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+    }
+    .section-main {
+        width: 502px;
+        min-width: 360px;
         display: flex;
-        justify-content: center;
-        flex-direction: row;
-        gap: 20px;
+        align-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        row-gap: 20px;
 
-        .aside-filter {
-            .card-body {
-                padding: 0;
-            }
-            // height: 300px;
-            width: 232px;
-            .form-label {
+        .button-group {
+            display: flex;
+            justify-content: center;
+
+            .toggle-button {
+                height: 50px;
+                display: flex;
+                border: 1px solid $button-border-color;
+                justify-content: center;
+                align-items: center;
+
+                font: $font-primary;
                 font-size: 12px;
-                line-height: 12px;
-
+                line-height: 20px;
+                text-align: center;
                 letter-spacing: 0.5px;
                 text-transform: uppercase;
                 color: $dark-color;
-                margin-bottom: 0;
-                padding: 20px 20px 10px 20px;
+                background-color: $white-color;
+                &:first-child {
+                    border-radius: $border-radius 0 0 $border-radius;
+                }
+                &:last-child {
+                    border-radius: 0 $border-radius $border-radius 0;
+                }
+            }
+
+            .toggle-button.active {
+                background-color: $primary-color;
+                color: $white-color;
             }
         }
+
         .card {
-            border-width: $border-width;
-            border-radius: $border-radius;
-            box-shadow: $box-shadow;
-        }
-        .section-main {
-            width: 502px;
-            min-width: 360px;
-            display: flex;
-            align-content: center;
-            flex-direction: column;
-            align-items: stretch;
-            row-gap: 20px;
+            .card-body {
+                padding: 20px;
+                padding-right: 20px;
 
-            .button-group {
-                display: flex;
-                justify-content: center;
-
-                .toggle-button {
-                    height: 50px;
+                .card-header-my {
+                    height: 36px;
+                    margin-bottom: 20px;
                     display: flex;
-                    border: 1px solid $button-border-color;
-                    justify-content: center;
-                    align-items: center;
+                    justify-content: space-between;
 
-                    font: $font-primary;
-                    font-size: 12px;
-                    line-height: 20px;
-                    text-align: center;
-                    letter-spacing: 0.5px;
-                    text-transform: uppercase;
-                    color: $dark-color;
-                    background-color: $white-color;
-                    &:first-child {
-                        border-radius: $border-radius 0 0 $border-radius;
+                    .company-logo {
+                        height: 100%;
+                        width: 110px;
+                        margin-right: 30px;
                     }
-                    &:last-child {
-                        border-radius: 0 $border-radius $border-radius 0;
-                    }
-                }
+                    .card-title-my {
+                        font-size: 24px;
+                        line-height: 24px;
 
-                .toggle-button.active {
-                    background-color: $primary-color;
-                    color: $white-color;
-                }
-            }
-
-            .card {
-                .card-body {
-                    padding: 20px;
-                    padding-right: 20px;
-
-                    .card-header-my {
-                        height: 36px;
-                        margin-bottom: 20px;
                         display: flex;
-                        justify-content: space-between;
+                        align-items: center;
+                        color: $primary-color;
+                        margin-bottom: 0;
+                    }
+                }
+                .routes-box {
+                    display: flex;
+                    row-gap: 10px;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    .routes {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        column-gap: 20px;
+                        /* justify-items: stretch; */
+                        /* align-items: center; */
 
-                        .company-logo {
-                            height: 100%;
-                            width: 110px;
-                            margin-right: 30px;
-                        }
-                        .card-title-my {
-                            font-size: 24px;
-                            line-height: 24px;
-
-                            display: flex;
-                            align-items: center;
-                            color: $primary-color;
+                        .routes-column {
                             margin-bottom: 0;
-                        }
-                    }
-                    .routes-box {
-                        display: flex;
-                        row-gap: 10px;
-                        flex-direction: column;
-                        flex-wrap: nowrap;
-                        .routes {
-                            display: grid;
-                            grid-template-columns: repeat(3, 1fr);
-                            column-gap: 20px;
-                            /* justify-items: stretch; */
-                            /* align-items: center; */
-
-                            .routes-column {
-                                margin-bottom: 0;
-                                > span {
-                                    display: block;
-                                }
-                                .routes-column-title {
-                                    color: $secondary-color;
-                                    font-size: 12px;
-                                    line-height: 18px;
-                                    letter-spacing: 0.5px;
-                                    text-transform: uppercase;
-                                }
-                                .routes-column-info {
-                                    color: $dark-color;
-                                    font-size: 14px;
-                                    line-height: 21px;
-                                }
+                            > span {
+                                display: block;
+                            }
+                            .routes-column-title {
+                                color: $secondary-color;
+                                font-size: 12px;
+                                line-height: 18px;
+                                letter-spacing: 0.5px;
+                                text-transform: uppercase;
+                            }
+                            .routes-column-info {
+                                color: $dark-color;
+                                font-size: 14px;
+                                line-height: 21px;
                             }
                         }
                     }
